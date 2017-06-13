@@ -1,0 +1,19 @@
+{
+  "name": "gitbookexplorer",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies":[
+    {
+      "path":"/explore",
+      "proxyUrl":"https://www.gitbook.com/explore"
+    },
+    {
+      "path":"/cover/book",
+      "proxyUrl":"https://www.gitbook.com/cover/book"
+    },
+    {
+      "path":"/",
+      "proxyUrl":"https://www.gitbook.com/"
+    } 
+  ]
+}
