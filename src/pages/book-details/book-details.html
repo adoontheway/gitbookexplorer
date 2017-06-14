@@ -5,13 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header padding>
-  <ion-navbar color="secondary">
+  <ion-navbar>
     <ion-title>{{book.title}}</ion-title>
-    <ion-buttons start>
-      <button ion-button icon-only (click)="download()">
-        <ion-icon name="download"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="close()">
         <ion-icon name="close"></ion-icon>
@@ -22,8 +17,8 @@
 </ion-header>
 <ion-content>
   <ion-row>
-    <ion-col><img [src]="book.cover.small"/><br/></ion-col>
-    <ion-col>
+    <ion-col width-40><img [src]="book_cover"/><br/></ion-col>
+    <ion-col width-60>
       <ion-row><img [src]="book.author.urls.avatar" width="100px" height="100px"/><br/></ion-row>
       <ion-row>
       Author:{{book.author.username}}
@@ -35,7 +30,7 @@
         <ion-icon name="eye">{{book.counts.subscriptions}}</ion-icon>
       </ion-row>
       <ion-row>
-        {{book.counts.updates}} updates, last updates at:{{book.dates.created.substring(0,10)}}
+        {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
       </ion-row>
       <ion-row>Topics:<br/>{{book.topics.join(",")}}</ion-row>
     </ion-col>
@@ -44,4 +39,8 @@
 Description:<br/>
 <p *ngIf="!book.description">no description</p>
 <p>{{book.description}}</p>
+
+<button ion-button (click)="download()">
+    <ion-icon name="download"></ion-icon>DOWNLOAD
+</button>
 </ion-content>

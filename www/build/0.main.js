@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 264:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__read__ = __webpack_require__(266);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReadPageModule", function() { return ReadPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__welcome__ = __webpack_require__(275);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WelcomePageModule", function() { return WelcomePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,36 +18,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ReadPageModule = (function () {
-    function ReadPageModule() {
+var WelcomePageModule = (function () {
+    function WelcomePageModule() {
     }
-    return ReadPageModule;
+    return WelcomePageModule;
 }());
-ReadPageModule = __decorate([
+WelcomePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__read__["a" /* ReadPage */],
+            __WEBPACK_IMPORTED_MODULE_2__welcome__["a" /* WelcomePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__read__["a" /* ReadPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__welcome__["a" /* WelcomePage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__read__["a" /* ReadPage */]
+            __WEBPACK_IMPORTED_MODULE_2__welcome__["a" /* WelcomePage */]
         ]
     })
-], ReadPageModule);
+], WelcomePageModule);
 
-//# sourceMappingURL=read.module.js.map
+//# sourceMappingURL=welcome.module.js.map
 
 /***/ }),
 
-/***/ 266:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReadPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,30 +60,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the ReadPage page.
+ * Generated class for the WelcomePage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var ReadPage = (function () {
-    function ReadPage(navCtrl, navParams) {
+var WelcomePage = (function () {
+    function WelcomePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    ReadPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReadPage');
+    WelcomePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad WelcomePage');
     };
-    return ReadPage;
+    return WelcomePage;
 }());
-ReadPage = __decorate([
+WelcomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-read',template:/*ion-inline-start:"D:\Workspace\gitbookexplorer\src\pages\read\read.html"*/'<!--\n  Generated template for the ReadPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ReadPage</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\gitbookexplorer\src\pages\read\read.html"*/,
+        selector: 'page-welcome',template:/*ion-inline-start:"D:\Workspace\gitbookexplorer\src\pages\welcome\welcome.html"*/'<!--\n  Generated template for the WelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding>\n  <p>This is an unofficial Gitbook Reader!</p>\n  <p>Please use it gracefully.</p>\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\gitbookexplorer\src\pages\welcome\welcome.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-], ReadPage);
+], WelcomePage);
 
-//# sourceMappingURL=read.js.map
+//# sourceMappingURL=welcome.js.map
 
 /***/ })
 

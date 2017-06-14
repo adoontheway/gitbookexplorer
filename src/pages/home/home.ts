@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,Platform,ModalController } from 'ionic-angular';
 import { GitbookProvider } from '../../providers/gitbook/gitbook';
 import { BookDetailsPage } from '../book-details/book-details';
+import { BookPage } from '../book/book';
 import { AboutPage } from '../about/about';
 import { FormControl } from "@angular/forms";
 
@@ -35,11 +36,18 @@ export class HomePage {
     })
   }
   showDetails(book){
-    let details = this.modalCtrl.create(BookDetailsPage,{book:book});
-    details.present();
+      let details = this.modalCtrl.create(BookDetailsPage,{book:book});
+      details.present();
+  }
+  showPreview(book){
+    this.gitbook.getDetails(book).then(data => {
+      console.log(data);
+    })
   }
   read(book){
-    this.gitbook.detail(book);
+    this.gitbook.readBook(book).then(data =>{
+      this.navCtrl.push(BookPage,{config:data});
+    })
   }
   showAbout(){
     let about = this.modalCtrl.create(AboutPage);

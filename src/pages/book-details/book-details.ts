@@ -14,8 +14,10 @@ import { IonicPage, ViewController, NavParams } from 'ionic-angular';
 })
 export class BookDetailsPage {
   book:any = null;
+  book_cover:string = '';
   constructor(public view: ViewController, public navParams: NavParams) {
     this.book = this.navParams.get('book');
+    this.book_cover = 'https://www.gitbook.com'+this.book.cover.small;
   }
 
   ionViewDidLoad() {

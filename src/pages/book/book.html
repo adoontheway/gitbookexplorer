@@ -5,14 +5,28 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>BookPage</ion-title>
+    <ion-title>{{config.page.title}}</ion-title>
+     
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
+<ion-content >
+  <ion-card>
+    <div [innerHtml]="content"></div>
+  </ion-card>
 
 </ion-content>
+
+<ion-footer>
+  <ion-buttons start *ngIf="hasPre" >
+    <button ion-button  (click)="pre()">
+      PRE
+    </button>
+  </ion-buttons>
+  <ion-buttons end *ngIf="hasNext" >
+    <button ion-button (click)="next()" *ngIf="hasNext">
+      NEXT
+    </button>
+  </ion-buttons>
+</ion-footer>

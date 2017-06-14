@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-// import { HTTP } from '@ionic-native/http';
+import { HTTP } from '@ionic-native/http';
+import { File } from '@ionic-native/file';
 import 'rxjs/add/operator/map';
-import { Platform,Loading,LoadingController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
+import { AlertControllerProvider } from '../../providers/alert-controller/alert-controller';
 /*
   Generated class for the GitbookProvider provider.
 
@@ -12,16 +14,14 @@ import { Platform,Loading,LoadingController } from 'ionic-angular';
 @Injectable()
 export class GitbookProvider {
   data:any=null;
-  loader:Loading;
-  constructor(public http: Http, public platform:Platform, public loadCtrl:LoadingController) {
+  constructor(public http: Http, public http1:HTTP,public platform:Platform, public file:File,public alertCtrl:AlertControllerProvider) {
     // console.log('Hello GitbookProvider Provider');
-     this.loader = this.loadCtrl.create({content:"Almost there, Hang on.."});
   }
 
   explore(){
     return new Promise(resolve =>{
-      this.loader.present();
-      this.http.get('/explore').subscribe(response=>{
+      this.alertCtrl.showLoading();
+      this.http.get('https://www.gitbook.com/explore').subscribe(response=>{
         var rawData:string = response['_body'];
         let index = rawData.indexOf('document.getElementById("application")');
         rawData = rawData.substring(0, index);
@@ -31,34 +31,33 @@ export class GitbookProvider {
         rawData = rawData.substring(index+6);
         this.data = JSON.parse(rawData);
         resolve(this.data);
-        this.loader.dismiss();
       }, err =>{
         console.log('Ooops!');
       })
     })
   }
 
-  detail(book){
+  getDetails(book){
     return new Promise(resolve => {
-      this.loader.present();
-      this.http.get('/book/frontendmasters/front-end-handbook/details').subscribe(response=>{
-         this.loader.dismiss();
+       this.alertCtrl.showLoading();
+      this.http.get('https://www.gitbook.com/book/'+book.id+'/details').subscribe(response=>{
+
       });
     })
   }
 
   search(topic){
      return new Promise(resolve => {
-       this.loader.present();
-      this.http.get('/book/frontendmasters/front-end-handbook/details').subscribe(response=>{
-         this.loader.dismiss();
+       this.alertCtrl.showLoading();
+      this.http.get('https://www.gitbook.com/book/frontendmasters/front-end-handbook/details').subscribe(response=>{
+        //  this.loader.dismiss();
       });
     })
   }
 
   getTopic(topic){
     return new Promise(resolve =>{
-      this.loader.present();
+       this.alertCtrl.showLoading();
       this.http.get(topic.urls.explore).subscribe(response=>{
         var rawData:string = response['_body'];
         let index = rawData.indexOf('document.getElementById("application")');
@@ -69,14 +68,45 @@ export class GitbookProvider {
         rawData = rawData.substring(index+6);
         this.data = JSON.parse(rawData);
         resolve(this.data);
-         this.loader.dismiss();
+        //  this.loader.dismiss();
       }, err =>{
         console.log('Ooops!');
       })
     }) 
   }
+  
+  readBook(book){
+    return new Promise(resolve =>{
+       this.alertCtrl.showLoading();
+      this.http.get('https://www.gitbook.com/read/book/'+book.id).subscribe(response=>{
+        var rawData:string = response['_body'];
+        let index = rawData.indexOf('<section class="normal markdown-section">');
+        let content = rawData.substring(index+41);
+        index = content.indexOf("</section>");
+        content = content.substring(0,index);
+        index = rawData.indexOf("gitbook.page.hasChanged(");
+        let config = rawData.substring(index+24);
+        index = config.indexOf('}});');
+        config = config.substring(0,index+2);
+        
+        // console.log(content);
+        config = JSON.parse(config);
+        // console.log(config);
+        resolve({book:book,content:content,config:config});
+        // this.loader.dismiss();
+      },err => {
+        console.log('this.http Load Book Error.',err);
+      });
+    });
+  }
 
   downloadBook(book){
-    // this.http.downloadFile(book.urls.pdf)
+    console.log(book.urls.pdf, this.file.applicationStorageDirectory);
+    this.http1.downloadFile(book.urls.pdf,{},{},this.file.applicationStorageDirectory).then(data=>{
+      console.log('downloadBook')
+    },err =>{
+      console.log('download err');
+      console.error(err);
+    })
   }
 }
