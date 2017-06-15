@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{config.page.title}}</ion-title>
+    <ion-title>{{title}}</ion-title>
      
   </ion-navbar>
 </ion-header>
@@ -20,12 +20,12 @@
 
 <ion-footer>
   <ion-buttons start *ngIf="hasPre" >
-    <button ion-button  (click)="pre()">
+    <button ion-button  (click)="showPre()">
       PRE
     </button>
   </ion-buttons>
   <ion-buttons end *ngIf="hasNext" >
-    <button ion-button (click)="next()" *ngIf="hasNext">
+    <button ion-button (click)="showNext()" *ngIf="hasNext">
       NEXT
     </button>
   </ion-buttons>
