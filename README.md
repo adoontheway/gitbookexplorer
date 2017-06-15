@@ -35,3 +35,4 @@ Dev Tools:
 * details page must be optimus
 * splashscreen and logo
 * do i need to include inappbrowser and crosswalk
+* logo test must be more clearer
