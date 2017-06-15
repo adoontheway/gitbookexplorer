@@ -1,12 +1,9 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <ion-searchbar color="primary" placeholder="enter topic" [(ngModel)]="topicValue" [formControl]="topicControl" value=""></ion-searchbar>
+      EXPLORER
     </ion-title>
     <ion-buttons end>
-       <button ion-button icon-only (click)="startSearch()">
-        <ion-icon name="search"></ion-icon>
-      </button>
       <button ion-button icon-only (click)="showAbout()">
         <ion-icon name="settings"></ion-icon>
       </button>
@@ -15,6 +12,26 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-searchbar animated="true" placeholder="enter topic" 
+      [(ngModel)]="topicValue" (ionInput)="onSearchInput($event)" (ionCancel)="onSearchCancel($event)" debounce="2000"></ion-searchbar>
+
+  <button ion-button menuToggle icon-only>
+    <ion-icon name='menu'></ion-icon>
+  </button>
+  
+  <!--ion-label>Type:</ion-label>
+  <ion-select [(ngModel)]="type">
+    <ion-option value="authors">Authors</ion-option>
+    <ion-option value="books">Books</ion-option>
+  </ion-select>
+  <ion-label>Sorted:</ion-label>
+  <ion-select [(ngModel)]="sort">
+    <ion-option value="updated">Updated</ion-option>
+    <ion-option value="stars" hidden="type == author">Most Stars</ion-option>
+    <ion-option value="default">Best Match</ion-option>
+  </ion-select-->
+
   <div *ngFor="let topic of topics" (click)="showTopic(topic)" hidden>
     <span>{{topic.name}} | {{topic.books}}</span>
   </div>
@@ -22,7 +39,7 @@
     <div ion-item *ngFor="let book of books">
         <b>{{book.title}}</b><br/>
         Author:{{book.author.username}}<br/>
-        topics:{{book.topics.join(";")}}<br/>
+        Tags:{{book.topics.join(";")}}<br/>
         <ion-buttons end>
           <button ion-button (click)="showDetails(book)">
             DETAILS
@@ -35,3 +52,12 @@
     </div>
   </ion-list>
 </ion-content>
+<!--ion-footer>
+    <button ion-button large outline>
+      Pre Page
+    </button>
+    <ion-label large>{{page}}/{{pages}}</ion-label>
+    <button ion-button large outline>
+     Next Page
+    </button>
+</ion-footer-->

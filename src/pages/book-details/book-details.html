@@ -19,12 +19,14 @@
   <ion-row>
     <ion-col width-40><img [src]="book_cover"/><br/></ion-col>
     <ion-col width-60>
-      <ion-row><img [src]="book.author.urls.avatar" width="100px" height="100px"/><br/></ion-row>
       <ion-row>
-      Author:{{book.author.username}}
+        <ion-avatar>
+        <img [src]="book.author.urls.avatar"/>
+        </ion-avatar>
+        <p>Author:{{book.author.username}}</p>
       </ion-row>
       <ion-row>
-      <ion-icon name="star">{{book.counts.stars}}</ion-icon>
+        <ion-icon name="star">{{book.counts.stars}}</ion-icon>
       </ion-row>
       <ion-row>
         <ion-icon name="eye">{{book.counts.subscriptions}}</ion-icon>
@@ -32,9 +34,10 @@
       <ion-row>
         {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
       </ion-row>
-      <ion-row>Topics:<br/>{{book.topics.join(",")}}</ion-row>
+
+      <ion-row>Tags:<br/>{{book.topics.join(",")}}</ion-row>
     </ion-col>
-  </ion-row>
+</ion-row>
 
 Description:<br/>
 <p *ngIf="!book.description">no description</p>

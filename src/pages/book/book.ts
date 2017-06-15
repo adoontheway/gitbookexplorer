@@ -39,7 +39,12 @@ export class BookPage {
 
   showPre(){
     this.gitbook.readPage(this.curUrl+this.prePage).then(data=>{
-
+       this.content = data['content'];
+      this.nextPage = data['next'];
+      this.prePage = data['pre'];
+      this.hasNext = data['next'] != null;
+      this.hasPre = data['pre'] != null;
+      this.title = data['title'];
     })
   }
 

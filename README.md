@@ -28,3 +28,10 @@ Dev Tools:
 * Android Studio
 * Genymotion
 * Chrome
+
+## BUGS and TODO
+* embed img source relative url issue
+* pager for the expore page
+* details page must be optimus
+* splashscreen and logo
+* do i need to include inappbrowser and crosswalk

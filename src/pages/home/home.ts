@@ -4,7 +4,7 @@ import { GitbookProvider } from '../../providers/gitbook/gitbook';
 import { BookDetailsPage } from '../book-details/book-details';
 import { BookPage } from '../book/book';
 import { AboutPage } from '../about/about';
-import { FormControl } from "@angular/forms";
+// import { FormControl } from "@angular/forms";
 
 @Component({
   selector: 'page-home',
@@ -17,10 +17,13 @@ export class HomePage {
   topics:any = [];
   pages:number = 0;
   topicValue:string = "";
-  topicControl:FormControl;
+  type:string = "books";
+  sort:string = "default";
+  showStarOption = true;
+  // topicControl:FormControl;
   
   constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController) {
-    this.topicControl = new FormControl();
+    // this.topicControl = new FormControl();
    
   }
   ionViewDidLoad(){
@@ -32,18 +35,18 @@ export class HomePage {
         this.pages = data['books']['pages'];
         this.total = data['books']['total'];
         this.topics = data['topics'];
-      })
-    })
+      });
+    });
   }
   showDetails(book){
       let details = this.modalCtrl.create(BookDetailsPage,{book:book});
       details.present();
   }
-  showPreview(book){
-    this.gitbook.getDetails(book).then(data => {
-      console.log(data);
-    })
-  }
+  // showPreview(book){
+  //   this.gitbook.getDetails(book).then(data => {
+  //     console.log(data);
+  //   })
+  // }
   read(book){
     this.gitbook.readBook(book).then(data =>{
       this.navCtrl.push(BookPage,{config:data});
@@ -53,11 +56,21 @@ export class HomePage {
     let about = this.modalCtrl.create(AboutPage);
     about.present();
   }
+  onSearchInput(evt){
+    let val = evt.target.value;
+    this.startSearch(val);
+  }
 
-  startSearch(){
-    this.gitbook.search(this.topicValue).then((data => {
-
-    }));
+  onSearchCancel($event){
+    
+  }
+  startSearch(val){
+    this.gitbook.search(this.topicValue).then(data =>{
+        this.books = data['results']['list'];
+        this.page = data['results']['page']+1;
+        this.pages = data['results']['pages'];
+        this.total = data['results']['total'];
+      });
   }
 
   showTopic(topic){
