@@ -6,7 +6,7 @@
 -->
 <ion-header>
     <ion-navbar color="secondary">
-    <ion-title>ABOUT</ion-title>
+    <ion-title>Settings</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="close()">
         <ion-icon name="close"></ion-icon>
@@ -15,7 +15,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-<p>Powered By:Ionic, Cordova, Angular</p>
+<!--p>Powered By:Ionic, Cordova, Angular</p>
 <p>Produced By:Ado</p>
-<p>Copyrights:What Copyrights?</p> 
+<p>Copyrights:What Copyrights?</p--> 
+<ion-list>
+<ion-item>
+  <ion-label>Cache Book Chapters</ion-label>
+  <ion-toggle checked="false" value="cache"></ion-toggle>
+</ion-item>
+<ion-item>
+  <ion-label>Books Sorted By:</ion-label>
+  <ion-toggle checked="true" value="default"></ion-toggle>
+  <ion-toggle checked="false" value="updated"></ion-toggle>
+  <ion-toggle checked="false" value="stars"></ion-toggle>
+</ion-item>
+</ion-list>
 </ion-content>

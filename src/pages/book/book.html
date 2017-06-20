@@ -18,12 +18,12 @@
 </ion-content>
 
 <ion-footer>
-  <ion-buttons end >
-    <button ion-button  (click)="showPre()" *ngIf="hasPre">
+  <!--ion-buttons end -->
+    <button ion-button block  (click)="showPre()" *ngIf="hasPre">
       PRE
     </button>
-    <button ion-button (click)="showNext()" *ngIf="hasNext">
+    <button ion-button block (click)="showNext()" *ngIf="hasNext">
       NEXT
     </button>
-  </ion-buttons>
+  <!--/ion-buttons-->
 </ion-footer>

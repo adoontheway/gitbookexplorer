@@ -11,12 +11,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content #content>
 
   <ion-searchbar animated="true" placeholder="enter topic" 
       [(ngModel)]="topicValue" (ionInput)="onSearchInput($event)" (ionCancel)="onSearchCancel($event)" debounce="2000"></ion-searchbar>
 
-  <button ion-button menuToggle icon-only>
+  <!--button ion-button menuToggle icon-only>
     <ion-icon name='menu'></ion-icon>
   </button>
   
@@ -35,8 +35,12 @@
   <div *ngFor="let topic of topics" (click)="showTopic(topic)" hidden>
     <span>{{topic.name}} | {{topic.books}}</span>
   </div>
-  <ion-list>
+  <ion-list >
     <div ion-item *ngFor="let book of books">
+      <div>
+        <img src="https://www.gitbook.com/assets/images/templates/base-icon.svg"/>
+      </div>
+      <div>
         <b>{{book.title}}</b><br/>
         Author:{{book.author.username}}<br/>
         Tags:{{book.topics.join(";")}}<br/>
@@ -47,9 +51,16 @@
           <button ion-button (click)="read(book)">
             READ
           </button>
-  
         </ion-buttons>
+      </div>
     </div>
+    <ion-label text-center>{{page}}/{{pages}}</ion-label>
+    <button ion-button block *ngIf="hasPre" (click)="prePage()">
+      PREVIOUS PAGE
+    </button>
+    <button ion-button block *ngIf="hasNext" (click)="nextPage()">
+      NEXT PAGE
+    </button>
   </ion-list>
 </ion-content>
 <!--ion-footer>

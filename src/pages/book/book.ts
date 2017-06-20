@@ -22,6 +22,7 @@ export class BookPage {
   hasNext = false;
   nextPage:string;
   prePage:string;
+  rootUrl:string;
   curUrl:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,public gitbook:GitbookProvider) {
     let config = this.navParams.get('config');
@@ -33,34 +34,47 @@ export class BookPage {
     this.title = config.title;
     this.nextPage = config.next;
     this.prePage = config.pre;
-    this.curUrl = config.curUrl;
+    this.curUrl = this.rootUrl = config.curUrl;
     // console.log(this.content);
   }
 
   showPre(){
-    this.gitbook.readPage(this.curUrl+this.prePage).then(data=>{
-       this.content = data['content'];
-      this.nextPage = data['next'];
-      this.prePage = data['pre'];
-      this.hasNext = data['next'] != null;
-      this.hasPre = data['pre'] != null;
-      this.title = data['title'];
-    })
-  }
-
-  showNext(){
-     this.gitbook.readPage(this.curUrl+this.nextPage).then(data=>{
+    let url;
+    if( this.curUrl[this.curUrl.length-1] == "/"){
+      url = this.curUrl+this.prePage;
+    }else{
+      url = this.rootUrl+this.prePage;
+    }
+    this.gitbook.readPage(url,this.rootUrl).then(data=>{
       this.content = data['content'];
       this.nextPage = data['next'];
       this.prePage = data['pre'];
       this.hasNext = data['next'] != null;
       this.hasPre = data['pre'] != null;
       this.title = data['title'];
+      this.curUrl = data['curUrl'];
+    })
+  }
+
+  showNext(){
+    let url;
+    if( this.curUrl[this.curUrl.length-1] == "/"){
+      url = this.curUrl+this.nextPage;
+    }else{
+      url = this.rootUrl+this.nextPage;
+    }
+     this.gitbook.readPage(url,this.rootUrl).then(data=>{
+      this.content = data['content'];
+      this.nextPage = data['next'];
+      this.prePage = data['pre'];
+      this.hasNext = data['next'] != null;
+      this.hasPre = data['pre'] != null;
+      this.title = data['title'];
+      this.curUrl = data['curUrl'];
     })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BookPage');
   }
-
 }
