@@ -9,6 +9,24 @@ The features are as below:
 6. Login(Further, and star, subscribe also)
 7. Forget, Settings or localstorage?
 
+## Short Term Target
+to ease the release of this app,  
+i need to make a plan for the release versions.  
+
+Current Version: 1.0.0-release , release eta 2017-6-23, must include features as below:
+1. read
+2. download
+3. explore
+4. search
+5. topic search
+6. cache(pages)
+7. settings(cache settings)
+
+1.1.0-release features,eta:null:
+1. settings(sort,cache)
+2. donate(? not decided)
+3. login(facebook,github,twitter,gitbook? not decided)
+
 ## Development Env
 
 Packages and Framework:
