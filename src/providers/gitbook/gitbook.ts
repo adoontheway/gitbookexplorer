@@ -172,8 +172,9 @@ export class GitbookProvider {
   }
 
   downloadBook(book){
-    console.log(book.urls.download.pdf, this.file.applicationStorageDirectory+book.name+".pdf");
-    this.http1.downloadFile(book.urls.download.pdf,{},{},this.file.applicationStorageDirectory+book.name+".pdf").then(data=>{
+    // console.log(book.urls.download.pdf, this.file.applicationStorageDirectory+book.name+".pdf");
+    this.http1.downloadFile(book.urls.download.pdf,{},{},
+    this.file.applicationStorageDirectory+book.name+".pdf").then(data=>{
       console.log('downloadBook')
     },err =>{
       console.log('download err');

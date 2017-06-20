@@ -3,8 +3,8 @@ This app supposed to be a Gitbook Explorer.
 The features are as below:
 1. Explore(finished),sort(unfinished)
 2. Read(processing)
-3. Download PDF(processing)
-4. Search(unfinished)
+3. Download PDF(finisehd)
+4. Search(finished)
 5. Topics(unfinished)
 6. Login(Further, and star, subscribe also)
 7. Forget, Settings or localstorage?
@@ -30,9 +30,9 @@ Dev Tools:
 * Chrome
 
 ## BUGS and TODO
-* embed img source relative url issue
-* pager for the expore page
+* embed img source relative url issue(fixed)
+* pager for the explorer page(fixed)
 * details page must be optimus
-* splashscreen and logo
+* splashscreen and logo(fixed temprary)
 * do i need to include inappbrowser and crosswalk
-* logo test must be more clearer
+* logo test must be more clearer(fixed i think)
