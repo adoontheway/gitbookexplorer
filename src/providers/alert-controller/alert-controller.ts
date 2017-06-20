@@ -11,10 +11,10 @@ import { LoadingController } from 'ionic-angular';
 export class AlertControllerProvider {
 
   constructor(public loadCtrl: LoadingController) {
-    console.log('Hello AlertControllerProvider Provider');
+    // console.log('Hello AlertControllerProvider Provider');
   }
   showLoading(){
-    let loader = this.loadCtrl.create({content:'Hange on, almost there...', duration:3000});
+    let loader = this.loadCtrl.create({content:'Hange on, almost there...', duration:2000});
     loader.present();
   }
 }

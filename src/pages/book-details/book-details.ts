@@ -24,7 +24,7 @@ export class BookDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BookDetailsPage');
+    // console.log('ionViewDidLoad BookDetailsPage');
   }
   
   download(){

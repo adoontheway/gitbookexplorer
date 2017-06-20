@@ -17,13 +17,15 @@
 </ion-header>
 <ion-content>
   <ion-row>
-    <ion-col width-40><img [src]="book_cover"/><br/></ion-col>
-    <ion-col width-60>
+    <ion-col col-4><img [src]="book_cover"/><br/></ion-col>
+    <ion-col col-60>
       <ion-row>
         <ion-avatar>
         <img [src]="book.author.urls.avatar"/>
         </ion-avatar>
-        <p>Author:{{book.author.username}}</p>
+      </ion-row>
+      <ion-row>
+        Author:{{book.author.username}}
       </ion-row>
       <ion-row>
         <ion-icon name="star">{{book.counts.stars}}</ion-icon>
@@ -34,19 +36,19 @@
       <ion-row>
         {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
       </ion-row>
-
-      <ion-row>Tags:<br/>{{book.topics.join(",")}}</ion-row>
     </ion-col>
 </ion-row>
-
-Description:<br/>
+<ion-label>Tags</ion-label>
+<ion-label>{{book.topics.join(",")}}</ion-label>
+<ion-label>Description</ion-label>
 <p *ngIf="!book.description">no description</p>
 <p>{{book.description}}</p>
-
+</ion-content>
+<ion-footer>
 <button ion-button (click)="download()">
     <ion-icon name="download"></ion-icon>DOWNLOAD
 </button>
  <button ion-button (click)="read(book)">
     READ
-  </button>
-</ion-content>
+</button>
+</ion-footer>
