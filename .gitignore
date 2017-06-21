@@ -23,3 +23,5 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 /platforms
 /node_modules
+/plugins
+/www
