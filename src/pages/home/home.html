@@ -4,33 +4,16 @@
       EXPLORER
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="showAbout()">
+      <button ion-button icon-only hidden (click)="showAbout()">
         <ion-icon name="settings"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content #content>
-
+<ion-content >
   <ion-searchbar animated="true" placeholder="enter topic" 
       [(ngModel)]="topicValue" (ionInput)="onSearchInput($event)" (ionCancel)="onSearchCancel($event)" debounce="2000"></ion-searchbar>
-
-  <!--button ion-button menuToggle icon-only>
-    <ion-icon name='menu'></ion-icon>
-  </button>
-  
-  <!--ion-label>Type:</ion-label>
-  <ion-select [(ngModel)]="type">
-    <ion-option value="authors">Authors</ion-option>
-    <ion-option value="books">Books</ion-option>
-  </ion-select>
-  <ion-label>Sorted:</ion-label>
-  <ion-select [(ngModel)]="sort">
-    <ion-option value="updated">Updated</ion-option>
-    <ion-option value="stars" hidden="type == author">Most Stars</ion-option>
-    <ion-option value="default">Best Match</ion-option>
-  </ion-select-->
 
   <div *ngFor="let topic of topics" (click)="showTopic(topic)" hidden>
     <span>{{topic.name}} | {{topic.books}}</span>

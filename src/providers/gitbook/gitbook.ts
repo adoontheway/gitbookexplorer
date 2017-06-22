@@ -40,7 +40,7 @@ export class GitbookProvider {
         this.data = JSON.parse(rawData);
         resolve(this.data);
       }, err =>{
-        console.log('Ooops!');
+        console.log('explore err:',err);
       })
     })
   }
@@ -68,7 +68,7 @@ export class GitbookProvider {
         this.data = JSON.parse(rawData);
         resolve(this.data);
       }, err =>{
-        console.log('Ooops!');
+        console.log('search error:',err);
       });
     })
   }
@@ -87,7 +87,7 @@ export class GitbookProvider {
         this.data = JSON.parse(rawData);
         resolve(this.data);
       }, err =>{
-        console.log('Ooops!');
+        console.log('get topics error:',err);
       })
     }) 
   }

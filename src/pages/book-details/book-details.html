@@ -4,45 +4,47 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header padding>
+<ion-header>
   <ion-navbar>
-    <ion-title>{{book.title}}</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="close()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-title>DETAIL</ion-title>
   </ion-navbar>
-  
 </ion-header>
 <ion-content>
-  <ion-row>
-    <ion-col col-4><img [src]="book_cover"/><br/></ion-col>
-    <ion-col col-60>
-      <ion-row>
-        <ion-avatar>
+  <ion-card>
+    <img [src]="book_cover"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{book.title}}
+      </ion-card-title>
+      <p>Author:{{book.author.username}}</p>
+      <p *ngIf="!book.description">no description</p>
+      <p>{{book.description}}</p>
+      
+      <!--ion-avatar>
         <img [src]="book.author.urls.avatar"/>
-        </ion-avatar>
-      </ion-row>
-      <ion-row>
-        Author:{{book.author.username}}
-      </ion-row>
-      <ion-row>
-        <ion-icon name="star">{{book.counts.stars}}</ion-icon>
-      </ion-row>
-      <ion-row>
-        <ion-icon name="eye">{{book.counts.subscriptions}}</ion-icon>
-      </ion-row>
-      <ion-row>
-        {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
-      </ion-row>
-    </ion-col>
-</ion-row>
+      </ion-avatar-->
+      <!--ion-icon name="star">{{book.counts.stars}}</ion-icon-->
+      <!--ion-icon name="eye">{{book.counts.subscriptions}}</ion-icon-->
+    
+      {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
+    </ion-card-content>
+      
+    <ion-item>
+      <ion-icon name='star' item-start style="color: #3d5afe"></ion-icon>
+        Stars
+      <ion-badge item-end>{{book.counts.stars}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-icon name='eye' item-start style="color: #3d5afe"></ion-icon>
+        Subscriptions
+      <ion-badge item-end>{{book.counts.subscriptions}}</ion-badge>
+    </ion-item>
+</ion-card>
+
 <ion-label>Tags</ion-label>
 <ion-label>{{book.topics.join(",")}}</ion-label>
-<ion-label>Description</ion-label>
-<p *ngIf="!book.description">no description</p>
-<p>{{book.description}}</p>
+<!--ion-label>Description</ion-label-->
+
 </ion-content>
 <ion-footer>
 <button ion-button (click)="download()">

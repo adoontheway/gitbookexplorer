@@ -27,8 +27,10 @@
         "@ionic-native/status-bar": "3.10.2",
         "@ionic/storage": "2.0.1",
         "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-compat": "^1.0.0",
         "cordova-plugin-console": "^1.0.5",
+        "cordova-plugin-crosswalk-webview": "^2.3.0",
         "cordova-plugin-device": "^1.1.4",
         "cordova-plugin-file": "^4.3.3",
         "cordova-plugin-http": "^1.2.0",
@@ -38,6 +40,7 @@
         "ionic-angular": "3.3.0",
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
+        "promise-polyfill": "6.0.2",
         "rxjs": "5.1.1",
         "sw-toolbox": "3.6.0",
         "zone.js": "0.8.11"
@@ -58,10 +61,18 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-file": {}
+            "cordova-plugin-file": {},
+            "cordova-plugin-crosswalk-webview": {
+                "XWALK_VERSION": "23+",
+                "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+                "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+                "XWALK_MODE": "embedded",
+                "XWALK_MULTIPLEAPK": "true"
+            }
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }

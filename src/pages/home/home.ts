@@ -25,16 +25,14 @@ export class HomePage {
   showStarOption = true;
   hasPre = false;
   hasNext = false;
-  // topicControl:FormControl;
   
   constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController) {
-    // this.topicControl = new FormControl();
    
   }
+
   ionViewDidLoad(){
     this.platform.ready().then(()=>{
       this.gitbook.explore().then(data =>{
-        // console.log(data);
         this.books = data['books']['list'];
         this.page = data['books']['page']+1;
         this.pages = data['books']['pages'];
@@ -46,8 +44,9 @@ export class HomePage {
     });
   }
   showDetails(book){
-      let details = this.modalCtrl.create(BookDetailsPage,{book:book,nav:this.navCtrl});
-      details.present();
+      // let details = this.modalCtrl.create(BookDetailsPage,{book:book,nav:this.navCtrl});
+      // details.present();
+      this.navCtrl.push(BookDetailsPage,{book:book});
   }
 
   read(book){

@@ -10,32 +10,35 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { AboutPage } from '../pages/about/about';
-import { BookPage } from '../pages/book/book';
-import { BookDetailsPage } from '../pages/book-details/book-details';
+import { AboutPageModule } from '../pages/about/about.module';
+import { BookPageModule } from '../pages/book/book.module';
+import { BookDetailsPageModule } from '../pages/book-details/book-details.module';
 import { GitbookProvider } from '../providers/gitbook/gitbook';
 import { AlertControllerProvider } from '../providers/alert-controller/alert-controller';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    BookDetailsPage,
-    AboutPage,
-    BookPage
+    HomePage
+    // BookDetailsPage,
+    // AboutPage,
+    // BookPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    AboutPageModule,
+    BookPageModule,
+    BookDetailsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    BookDetailsPage,
-    AboutPage,
-    BookPage
+    HomePage
+    // BookDetailsPage,
+    // AboutPage,
+    // BookPage
   ],
   providers: [
     StatusBar,

@@ -18,14 +18,16 @@ Current Version: 1.0.0-release , release eta 2017-6-23, must include features as
 2. download
 3. explore
 4. search
-5. topic search
-6. cache(pages)
-7. settings(cache settings)
+
 
 1.1.0-release features,eta:null:
 1. settings(sort,cache)
 2. donate(? not decided)
 3. login(facebook,github,twitter,gitbook? not decided)
+4. cache(pages)
+5. settings(cache settings)
+6. topic search
+
 
 ## Development Env
 
