@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.github.adobeattheworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Gitbook Exploer</name>
-    <description>Explorer for Gitbook, unofficial.</description>
+    <name>eBooks IT</name>
+    <description>Explore online ebooks</description>
     <author email="adoontheway@gmail.com" href="https://adobeattheworld.github.io/">Ado</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="https://www.gitbooks.com" />
-    <allow-navigation href="http://10.9.2.25:8100" />
-    <allow-navigation href="http://192.168.56.1:8100" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
