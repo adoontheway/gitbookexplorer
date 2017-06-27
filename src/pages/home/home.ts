@@ -2,6 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { Content } from 'ionic-angular';
 import { NavController,Platform,ModalController } from 'ionic-angular';
 import { GitbookProvider } from '../../providers/gitbook/gitbook';
+import { LanguageProvider } from '../../providers/language/language';
 import { BookDetailsPage } from '../book-details/book-details';
 import { BookPage } from '../book/book';
 import { AboutPage } from '../about/about';
@@ -26,7 +27,7 @@ export class HomePage {
   hasPre = false;
   hasNext = false;
   
-  constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController) {
+  constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController,public lang:LanguageProvider) {
    
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GitbookProvider } from '../../providers/gitbook/gitbook';
+import { LanguageProvider } from '../../providers/language/language';
 
 /**
  * Generated class for the BookPage page.
@@ -24,7 +25,7 @@ export class BookPage {
   prePage:string;
   rootUrl:string;
   curUrl:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public gitbook:GitbookProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public gitbook:GitbookProvider,public lang:LanguageProvider) {
     let config = this.navParams.get('config');
     this.content = config.content;
     this.book = config.book;

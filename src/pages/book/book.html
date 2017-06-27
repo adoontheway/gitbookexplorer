@@ -20,10 +20,10 @@
 <ion-footer>
   <!--ion-buttons end -->
     <button ion-button block  (click)="showPre()" *ngIf="hasPre">
-      PRE
+      {{lang.getText('previous')}}
     </button>
     <button ion-button block (click)="showNext()" *ngIf="hasNext">
-      NEXT
+       {{lang.getText('next')}}
     </button>
   <!--/ion-buttons-->
 </ion-footer>

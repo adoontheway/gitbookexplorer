@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      EXPLORER
+      {{lang.getText('explorer')}}
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only hidden (click)="showAbout()">
@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content >
-  <ion-searchbar animated="true" placeholder="enter topic" 
+  <ion-searchbar animated="true" 
       [(ngModel)]="topicValue" (ionInput)="onSearchInput($event)" (ionCancel)="onSearchCancel($event)" debounce="2000"></ion-searchbar>
 
   <div *ngFor="let topic of topics" (click)="showTopic(topic)" hidden>
@@ -25,24 +25,24 @@
       </div>
       <div>
         <b>{{book.title}}</b><br/>
-        Author:{{book.author.username}}<br/>
-        Tags:{{book.topics.join(";")}}<br/>
+        {{lang.getText('author')}}:{{book.author.username}}<br/>
+        {{lang.getText('tags')}}:{{book.topics.join(";")}}<br/>
         <ion-buttons end>
           <button ion-button (click)="showDetails(book)">
-            DETAILS
+            {{lang.getText('details')}}
           </button>
           <button ion-button (click)="read(book)">
-            READ
+            {{lang.getText('read')}}
           </button>
         </ion-buttons>
       </div>
     </div>
     <ion-label text-center>{{page}}/{{pages}}</ion-label>
     <button ion-button block *ngIf="hasPre" (click)="prePage()">
-      PREVIOUS PAGE
+      {{lang.getText('previous')}}
     </button>
     <button ion-button block *ngIf="hasNext" (click)="nextPage()">
-      NEXT PAGE
+      {{lang.getText('next')}}
     </button>
   </ion-list>
 </ion-content>

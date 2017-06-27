@@ -9,6 +9,15 @@ The features are as below:
 6. Login(Further, and star, subscribe also)
 7. Forget, Settings or localstorage?
 
+## BUGS and TODO
+* 腾讯应用宝，华为，小米市场，豌豆荚
+* 语言本地化(中文名：猿书，需要重新打包)
+* 已下载pdf列表以及阅读
+* 缓存页面
+* 网易风格的加载进度条
+* google admobs研究
+
+
 ## Short Term Target
 to ease the release of this app,  
 i need to make a plan for the release versions.  
@@ -46,13 +55,5 @@ Packages and Framework:
 Dev Tools:
 * Visual Studio Code
 * Android Studio
-* Genymotion
+* Genymotion（deprecated, use android avd instead.）
 * Chrome
-
-## BUGS and TODO
-* embed img source relative url issue(fixed)
-* pager for the explorer page(fixed)
-* details page must be optimus
-* splashscreen and logo(fixed temprary)
-* do i need to include inappbrowser and crosswalk
-* logo test must be more clearer(fixed i think)

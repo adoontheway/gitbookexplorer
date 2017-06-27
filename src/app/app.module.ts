@@ -15,6 +15,7 @@ import { BookPageModule } from '../pages/book/book.module';
 import { BookDetailsPageModule } from '../pages/book-details/book-details.module';
 import { GitbookProvider } from '../providers/gitbook/gitbook';
 import { AlertControllerProvider } from '../providers/alert-controller/alert-controller';
+import { LanguageProvider } from '../providers/language/language';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AlertControllerProvider } from '../providers/alert-controller/alert-con
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GitbookProvider,
     AlertControllerProvider,
-    AlertControllerProvider
+    LanguageProvider
   ]
 })
 export class AppModule {}

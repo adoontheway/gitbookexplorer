@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavParams,NavController } from 'ionic-angular';
 import { GitbookProvider } from '../../providers/gitbook/gitbook';
 import { BookPage } from '../book/book';
+import { LanguageProvider } from '../../providers/language/language';
 /**
  * Generated class for the BookDetailsPage page.
  *
@@ -17,7 +18,7 @@ export class BookDetailsPage {
   book:any = null;
   book_cover:string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public gitbook:GitbookProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public gitbook:GitbookProvider,public lang:LanguageProvider) {
     this.book = this.navParams.get('book');
     this.book_cover = 'https://www.gitbook.com'+this.book.cover.small;
   }

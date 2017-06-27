@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>DETAIL</ion-title>
+    <ion-title>{{lang.getText('details')}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
@@ -16,8 +16,8 @@
       <ion-card-title>
         {{book.title}}
       </ion-card-title>
-      <p>Author:{{book.author.username}}</p>
-      <p *ngIf="!book.description">no description</p>
+      <p>{{lang.getText('author')}}:{{book.author.username}}</p>
+      <p *ngIf="!book.description">{{lang.getText('nodesc')}}</p>
       <p>{{book.description}}</p>
       
       <!--ion-avatar>
@@ -26,31 +26,31 @@
       <!--ion-icon name="star">{{book.counts.stars}}</ion-icon-->
       <!--ion-icon name="eye">{{book.counts.subscriptions}}</ion-icon-->
     
-      {{book.counts.updates}} updates<br/> Last Update:{{book.dates.created.substring(0,10)}}
+      {{book.counts.updates}} {{lang.getText('updates')}}<br/> {{lang.getText('lastupdate')}}:{{book.dates.created.substring(0,10)}}
     </ion-card-content>
       
     <ion-item>
       <ion-icon name='star' item-start style="color: #3d5afe"></ion-icon>
-        Stars
+        {{lang.getText('stars')}}
       <ion-badge item-end>{{book.counts.stars}}</ion-badge>
     </ion-item>
     <ion-item>
       <ion-icon name='eye' item-start style="color: #3d5afe"></ion-icon>
-        Subscriptions
+         {{lang.getText('subsc')}}
       <ion-badge item-end>{{book.counts.subscriptions}}</ion-badge>
     </ion-item>
 </ion-card>
 
-<ion-label>Tags</ion-label>
+<ion-label>{{lang.getText('tags')}}</ion-label>
 <ion-label>{{book.topics.join(",")}}</ion-label>
 <!--ion-label>Description</ion-label-->
 
 </ion-content>
 <ion-footer>
 <button ion-button (click)="download()">
-    <ion-icon name="download"></ion-icon>DOWNLOAD
+    <ion-icon name="download"></ion-icon>{{lang.getText('download')}}
 </button>
  <button ion-button (click)="read(book)">
-    READ
+    {{lang.getText('read')}}
 </button>
 </ion-footer>
