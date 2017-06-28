@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HTTP } from '@ionic-native/http';
 import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 import { HttpModule } from '@angular/http';
 // import { FormControl } from "@angular/forms";
 
@@ -44,6 +45,7 @@ import { LanguageProvider } from '../providers/language/language';
   providers: [
     StatusBar,
     File,
+    FileOpener,
     AlertControllerProvider,
     HTTP,
     SplashScreen,

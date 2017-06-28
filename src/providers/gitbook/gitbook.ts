@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http,Headers } from '@angular/http';
 import { HTTP } from '@ionic-native/http';
 import { File } from '@ionic-native/file';
-import 'rxjs/add/operator/map';
 import { Platform } from 'ionic-angular';
 import { AlertControllerProvider } from '../../providers/alert-controller/alert-controller';
 /*
@@ -17,13 +16,28 @@ export class GitbookProvider {
   parser:DOMParser;
   headers:Headers;
   constructor(public http: Http, public http1:HTTP,public platform:Platform, public file:File,public alertCtrl:AlertControllerProvider) {
-    // console.log('Hello GitbookProvider Provider');
     this.headers = new Headers();
     this.parser = new DOMParser();
     this.xmlSerializer = new XMLSerializer();
-    // this.headers.append("accept-encoding","gzip, deflate, sdch, br");
+   
     this.headers.append("accept-language","en-US,en;q=0.8");
     this.headers.append("accept","text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+    
+    this.platform.ready().then(()=>{
+      /*
+      this.file.checkDir(this.file.applicationStorageDirectory,'').then(res =>{
+        if(!res){
+          this.file.createDir(this.file.applicationStorageDirectory,'',false).then(res=>{
+            console.log('create books dir success.')
+          },err =>{
+            console.log('create books dir err:',err)
+          });
+        }
+      })
+      */
+      // this.downloadedFiles();
+    })
+    
   }
 
   explore(page=0,lange=''){
@@ -174,11 +188,26 @@ export class GitbookProvider {
   downloadBook(book){
     // console.log(book.urls.download.pdf, this.file.applicationStorageDirectory+book.name+".pdf");
     this.http1.downloadFile(book.urls.download.pdf,{},{},
+    
     this.file.applicationStorageDirectory+book.name+".pdf").then(data=>{
       console.log('downloadBook')
     },err =>{
       console.log('download err');
       console.error(err);
     })
+  }
+
+  downloadedFiles(){
+    return new Promise(resolve => this.file.listDir(this.file.applicationStorageDirectory,'').then(data =>{
+      /**
+       * data[i]
+       * fullPath:"/data/data/io.github.adobeattheworld/front-end-handbook.pdf"
+       * isDirectory:false
+       * isFile:true
+       * name:"front-end-handbook.pdf"
+       * nativeURL:"file:///data/data/io.github.adobeattheworld/front-end-handbook.pdf"
+       */
+      resolve(data);
+    }));
   }
 }

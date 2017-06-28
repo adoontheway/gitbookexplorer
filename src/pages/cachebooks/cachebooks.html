@@ -1,0 +1,22 @@
+<!--
+  Generated template for the CachebooksPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{lang.getText('downloads')}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+<ion-list padding>
+  <div ion-item *ngFor="let book of books">
+    {{book.name}}
+    <button ion-button (click)="read(book)">
+      {{lang.getText('read')}}
+    </button>
+  </div>
+</ion-list>
+</ion-content>

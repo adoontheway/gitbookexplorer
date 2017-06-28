@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 /*
   Generated class for the LanguageProvider provider.
@@ -21,12 +19,13 @@ export class LanguageProvider {
     'read':'阅读',
     'previous':'上一页',
     'next':'下一页',
-    'explorer':'浏览器',
+    'explorer':'浏览',
     'download':'下载',
     'nodesc':'暂无描述',
     'entertopic':'输入搜索内容',
     'updates':'更新',
-    'lastupdate':'最近更新'
+    'lastupdate':'最近更新',
+    'downloads':'已下载书目'
   },
   'en':{
     'author':'Author',
@@ -42,12 +41,12 @@ export class LanguageProvider {
     'nodesc':'no description',
     'entertopic':'enter topic',
     'updates':'updates',
-    'lastupdate':'Last Update'
+    'lastupdate':'Last Update',
+    'downloads':'Downloads'
   }
   };
   config_r;
-  constructor(public http: Http) {
-    console.log('Hello LanguageProvider Provider');
+  constructor() {
     this.config_r = this.config_s[this.area];
   }
 

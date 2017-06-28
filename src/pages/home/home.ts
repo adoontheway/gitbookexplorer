@@ -27,7 +27,7 @@ export class HomePage {
   hasPre = false;
   hasNext = false;
   
-  constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController,public lang:LanguageProvider,public admob:AdMobFree) {
+  constructor(public navCtrl: NavController,public platform:Platform, public gitbook:GitbookProvider,public modalCtrl:ModalController,public lang:LanguageProvider) {
    
   }
 
