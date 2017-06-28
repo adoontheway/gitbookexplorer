@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.github.adobeattheworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>eBooks IT</name>
-    <description>Explore online ebooks</description>
+    <name>猿书</name>
+    <description>浏览在线IT电子书</description>
     <author email="adoontheway@gmail.com" href="https://adobeattheworld.github.io/">Ado</author>
     <content src="index.html" />
     <access origin="*" />
