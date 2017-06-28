@@ -10,12 +10,13 @@ The features are as below:
 7. Forget, Settings or localstorage?
 
 ## BUGS and TODO
-* 腾讯应用宝，华为，小米市场，豌豆荚
-* 语言本地化(中文名：猿书，需要重新打包)
-* 已下载pdf列表以及阅读
-* 缓存页面
-* 网易风格的加载进度条
-* google admobs研究
+* 腾讯应用宝，华为，小米市场，豌豆荚,360
+* 语言本地化(中文名：猿书，需要重新打包) 已完成
+* 已下载pdf列表以及阅读（这个功能需要做）
+* 缓存页面（这个功能考虑下个版本）
+* 网易风格的加载进度条（考虑中，目前的全屏显示加载条是只有3s时间）
+* google admobs研究（弃，等上google play的时候再研究）
+* 腾讯广点通开通
 
 
 ## Short Term Target
