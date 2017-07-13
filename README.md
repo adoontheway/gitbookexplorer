@@ -17,6 +17,7 @@ The features are as below:
 * 网易风格的加载进度条（考虑中，目前的全屏显示加载条是只有3s时间）
 * google admobs研究（弃，等上google play的时候再研究）
 * 腾讯广点通开通
+* 要不要考虑做到微信公众号上去
 
 
 ## Short Term Target
