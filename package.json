@@ -1,8 +1,8 @@
 {
     "name": "gitbookexplorer",
     "version": "0.0.1",
-    "author": "Ionic Framework",
-    "homepage": "http://ionicframework.com/",
+    "author": "AdoBeatTheWorld",
+    "homepage": "https://github.com/AdoBeatTheWorld/gitbookexplorer",
     "private": true,
     "scripts": {
         "clean": "ionic-app-scripts clean",
